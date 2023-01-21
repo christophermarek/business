@@ -50,7 +50,8 @@ export default function Home() {
   useEffect(() => {
 
     if (window && window.document) {
-      const audioPlayer = window.document.getElementById("backgroundMusic");
+      const obj = window.document.getElementById("backgroundMusic");
+      const audioPlayer = obj as HTMLAudioElement;
       if (audioPlayer) {
         audioPlayer.play().catch(
           () => {

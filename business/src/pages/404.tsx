@@ -1,3 +1,7 @@
 export default function Custom404() {
-    return <h1>LEAVE</h1>
-  }
+  return (
+    <div className='glitchText text-white font-sans text-10xl'>
+      LEAVE
+    </div>
+  );
+}

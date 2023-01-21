@@ -47,6 +47,24 @@ export default function Home() {
     }
   }, [imageAnimationFrames]);
 
+  useEffect(() => {
+
+    if (window && window.document) {
+      const audioPlayer = window.document.getElementById("backgroundMusic");
+      if (audioPlayer) {
+        audioPlayer.play().catch(
+          () => {
+            window.document.addEventListener('click', () => {
+              audioPlayer.play();
+            }, { once: true });
+          }
+        );
+      }
+    }
+  }, []);
+
+
+
   return (
     <>
       <Head>
@@ -67,6 +85,7 @@ export default function Home() {
             {/* {renderer(8)} */}
             <audio
               src="/officeSound.mp3"
+              id="backgroundMusic"
               loop
               autoPlay>
               Your browser does not support the
